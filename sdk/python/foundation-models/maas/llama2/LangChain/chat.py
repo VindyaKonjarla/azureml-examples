@@ -20,6 +20,8 @@
 
 #key1.env: It is an environment file where the API key and model URL are stored.
 
+#The environment file should be in the same root directory.
+
 from langchain_community.chat_models.azureml_endpoint import AzureMLChatOnlineEndpoint
 from langchain.schema import HumanMessage
 from langchain.schema import HumanMessage
