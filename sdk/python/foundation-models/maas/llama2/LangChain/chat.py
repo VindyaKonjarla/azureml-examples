@@ -30,17 +30,17 @@ from langchain_community.chat_models.azureml_endpoint import (
     AzureMLEndpointApiType,
     LlamaChatContentFormatter,
 )
-config = dotenv_values("key1.env")#Load the environmet variable from the .env file
-config1=dict(config)   # converting into key and values from the list
+config = dotenv_values("key1.env")
+config1=dict(config)   
 chat = AzureMLChatOnlineEndpoint(
-    endpoint_url=config1["BASE_URL"], # Load the URL from the .env file
+    endpoint_url=config1["BASE_URL"], 
     endpoint_api_type=AzureMLEndpointApiType.serverless,
-    endpoint_api_key=config1["API_KEY"],# Load the primary/secondary key or AMLToken for the endpoint from the .env file
+    endpoint_api_key=config1["API_KEY"],
     content_formatter=LlamaChatContentFormatter(),
-    model_kwargs={"temperature": 0.8}, #temperature value defines the accuracy of the output
+    model_kwargs={"temperature": 0.8}, 
 )
 response = chat.invoke(
-    [HumanMessage(content="Will the Collatz conjecture ever be solved?")],# fetching the output from endpoint
+    [HumanMessage(content="Will the Collatz conjecture ever be solved?")],
     max_tokens=512,
 )
 response
