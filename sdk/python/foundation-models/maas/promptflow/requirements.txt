@@ -1,3 +1,0 @@
-python-dotenv
-promptflow
-promptflow-tools
