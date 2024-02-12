@@ -18,7 +18,7 @@
 
 #dotenv_values():It allows you to read key-value pairs from a .env file and return them as a dictionary 
 
-#key1.env: It is an environment file where the API key and model URL are stored.
+#.env: It is an environment file where the API key and model URL are stored.
 
 #The environment file should be in the same root directory.
 
@@ -31,7 +31,7 @@ from langchain_community.chat_models.azureml_endpoint import (
     LlamaChatContentFormatter,
     AzureMLOnlineEndpoint,
 )
-config = dotenv_values("key1.env") 
+config = dotenv_values(".env") 
 config1=dict(config)   
 chat = AzureMLOnlineEndpoint(
     endpoint_url=config1["BASE_URL"], 
