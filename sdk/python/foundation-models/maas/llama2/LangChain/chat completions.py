@@ -26,18 +26,18 @@ from langchain_community.chat_models.azureml_endpoint import AzureMLChatOnlineEn
 from langchain.schema import HumanMessage
 from langchain.schema import HumanMessage
 from dotenv import dotenv_values
-from langchain_community.chat_models.azureml_endpoint import (
+from langchain_community.llms.azureml_endpoint import (
     AzureMLEndpointApiType,
-    LlamaChatContentFormatter,
+    LlamaContentFormatter,
     AzureMLOnlineEndpoint,
 )
 config = dotenv_values(".env") 
 config1=dict(config)   
-chat = AzureMLOnlineEndpoint(
+llm = AzureMLOnlineEndpoint(
     endpoint_url=config1["BASE_URL"], 
     endpoint_api_type=AzureMLEndpointApiType.serverless,
     endpoint_api_key=config1["API_KEY"], 
-    content_formatter=LlamaChatContentFormatter(),
+    content_formatter=LlamaContentFormatter(),
     model_kwargs={"temperature": 0.8, "max_new_tokens": 400},
 )
 response = llm.invoke("My name is Julien and I like to")
