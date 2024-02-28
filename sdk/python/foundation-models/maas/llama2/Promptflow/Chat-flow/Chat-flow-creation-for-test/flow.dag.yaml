@@ -22,7 +22,7 @@ nodes:
     tool: promptflow.tools.open_model_llm.OpenModelLLM.call
   inputs:
     api: chat
-    endpoint_name: serverlessEndpoint/Llama-2-7b-chat-mass
+    endpoint_name: "<endpoint_name>"
     deployment_name: Llama-2-7b-chat-mass
     temperature: 1
     max_new_tokens: 500
