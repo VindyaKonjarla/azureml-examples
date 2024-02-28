@@ -27,7 +27,7 @@ nodes:
     api: chat
     topic: ${user_input.output}
     deployment_name: Llama-2-7b-chat
-    endpoint_name: serverlessEndpoint/Llama-2-7b-chat-mass
+    endpoint_name: "<endpoint_name>"
     max_new_tokens: 500
     model_kwargs: {}
     temperature: 1
